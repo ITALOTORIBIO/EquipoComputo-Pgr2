@@ -1,2 +1,2 @@
-# EquipoComputo-Pgr2
-EQUIPOCOMPUTO
+# EquipoComputo
+3
