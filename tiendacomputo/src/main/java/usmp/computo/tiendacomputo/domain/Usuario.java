@@ -11,7 +11,6 @@ import javax.persistence.Id;
 @Entity
 public class Usuario{
 
-  
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 
 	@Id
