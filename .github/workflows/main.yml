@@ -26,11 +26,11 @@ jobs:
       uses: gonuit/heroku-docker-deploy@v1.3.2 
       with:
 
-          email: ${{ secrets.HEROKU_EMAIL }}
+          email: "italo_toribio@usmp.pe"
 
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_api_key: "79e6ac2e-08e7-44ba-950e-029e604b71d7"
           
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_app_name: "usmpcomputo-api"
 
           dockerfile_directory: ./tiendacomputoapi
 
@@ -60,11 +60,11 @@ jobs:
       uses: gonuit/heroku-docker-deploy@v1.3.2 
       with:
 
-          email: ${{ secrets.HEROKU_EMAIL }}
+          email: "italo_toribio@usmp.pe"
 
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_api_key: "79e6ac2e-08e7-44ba-950e-029e604b71d7"
           
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME_FRONT }}
+          heroku_app_name: "usmpcomputo-mvc"
 
           dockerfile_directory: ./tiendacomputomvc
 
