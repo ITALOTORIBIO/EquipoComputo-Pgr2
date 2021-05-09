@@ -1,4 +1,4 @@
-package usmp.computo.tiendacomputo.domain;
+package usmp.computo.model;
 
 
 import javax.persistence.Entity;

@@ -1,13 +1,13 @@
-package usmp.computo.tiendacomputo;
+package usmp.computo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TiendacomputoApplication {
+public class TiendacomputoAPIApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TiendacomputoApplication.class, args);
+		SpringApplication.run(TiendacomputoAPIApplication.class, args);
 	}
 
 }
