@@ -26,7 +26,7 @@ public class UserController {
         this.userData = userData;
     }
 
-    @GetMapping("/")
+    @GetMapping("/nada/")
     public String index(Model model){
         User usuario = new User();
         model.addAttribute("user", usuario);
