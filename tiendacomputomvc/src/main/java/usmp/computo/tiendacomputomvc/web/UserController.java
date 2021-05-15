@@ -21,7 +21,8 @@ public class UserController {
     private final UserRepository userData;
     private static final String MESSAGE_ATTRIBUTE = "message"; 
     private static final String USER_INDEX ="user/index";
-    private static final String HOME_INDEX ="home/index"; 
+    private static final String HOME_INDEX ="home/index";
+    private static final String Pro_INDEX ="Producto/create";  
     public UserController(UserRepository userData) {
         this.userData = userData;
     }
@@ -44,7 +45,7 @@ public class UserController {
            if(userDB.isPresent()){
                 if(objUser.getPassword().equals(userDB.get().getPassword())){
                     model.addAttribute(MESSAGE_ATTRIBUTE, "Ingreso Satisfactorio");
-                    page = HOME_INDEX;
+                    page = Pro_INDEX;                                                                                                                                                                      
                 }else{
                     model.addAttribute(MESSAGE_ATTRIBUTE, "Password no coincide");
                     page = USER_INDEX;

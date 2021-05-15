@@ -24,7 +24,7 @@ public class Producto{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+      private int id;
     private String Nombre;
     private String Descripcion;
      private String Categoria;

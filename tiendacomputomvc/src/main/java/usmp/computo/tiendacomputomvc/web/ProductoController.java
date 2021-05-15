@@ -37,16 +37,18 @@ public class ProductoController {
     }
        
 
+    
     @PostMapping("/Producto/create")
-    public String createSubmitForm(Model model, 
-        @Valid Producto objProducto, BindingResult result ){
-        if(result.hasFieldErrors()) {
-            model.addAttribute("mensaje", "No se registro producto");
-        }else{
+    public String submitCreationForm(Model model,
+        @Valid Producto objProducto, BindingResult result) {
+        if (!result.hasErrors()) {
             this.productoData.save(objProducto);
-            model.addAttribute(MODEL_CONTACT, objProducto);
-            model.addAttribute("mensaje", "Se registro producto");
+            model.addAttribute("Producto", objProducto);
+            model.addAttribute("message", "Se registro satisfactoriamente");
+        }else{
+            model.addAttribute("message", "Por favor envie los datos correctos");
         }
         return INDEX;
     }
+
 }
