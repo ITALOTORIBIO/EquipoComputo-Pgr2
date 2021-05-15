@@ -28,7 +28,7 @@ public class ProductoController {
        
         this.productoData = productoData;
    }
-    @GetMapping("/")
+    @GetMapping("/Producto/create")
     public String index(Model model) {
         Producto producto = new Producto();
         model.addAttribute("Producto", producto);
