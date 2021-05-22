@@ -1,0 +1,37 @@
+<html xmlns:th="https://www.thymeleaf.org"
+    th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+
+
+
+<head>
+    <title>User</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css} " />
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+   
+    <h1>Ventas</h1>
+
+    <table id="example" class="table table-bordered table-responsive" style="width: 100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>CodCliente</th>
+            <th>IdProducto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="item : ${ventaDB}">
+            <td>#</td>
+            <td th:text="${item.CodCliente}"></td>
+            <td th:text="${item.IdProducto}"></td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+
+</html> 
