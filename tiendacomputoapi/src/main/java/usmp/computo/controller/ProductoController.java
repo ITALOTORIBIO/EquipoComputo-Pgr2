@@ -46,7 +46,7 @@ public class ProductoController {
         ProductoRepository.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);
     }
-    @PutMapping(value = "/Producto", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/Update", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Producto> update(@RequestBody Producto e){
         create(e);
         return new ResponseEntity<Producto>(HttpStatus.OK);
