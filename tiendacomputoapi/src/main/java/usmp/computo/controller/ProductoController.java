@@ -35,13 +35,13 @@ public class ProductoController {
             ProductoRepository.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/Producto", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/Create", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Integer> create(@RequestBody Producto e){
         ProductoRepository.save(e);
         ProductoRepository.flush();
         return new ResponseEntity<Integer>(e.getId(),HttpStatus.CREATED);
     }
-    @DeleteMapping(value = "/Producto/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/Delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity delete(@PathVariable int id){
         ProductoRepository.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);
