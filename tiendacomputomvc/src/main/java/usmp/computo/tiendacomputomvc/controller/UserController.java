@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 
-import usmp.computo.tiendacomputomvc.domain.User;
+import usmp.computo.tiendacomputomvc.model.User;
 import usmp.computo.tiendacomputomvc.repository.*;
 
 import java.util.Optional;
