@@ -1,4 +1,4 @@
-package usmp.computo.tiendacomputomvc.web;
+package usmp.computo.tiendacomputomvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
