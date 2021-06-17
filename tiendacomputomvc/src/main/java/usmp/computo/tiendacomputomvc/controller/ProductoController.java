@@ -20,7 +20,7 @@ import org.springframework.validation.BindingResult;
 
 public class ProductoController {
     private static final String INDEX ="Producto/create"; 
-    
+
     
     private final ProductoRepository productoData;
 
