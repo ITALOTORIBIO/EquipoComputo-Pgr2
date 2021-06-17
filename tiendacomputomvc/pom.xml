@@ -14,7 +14,7 @@
 	<name>tiendacomputomvc</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 		<!-- Web dependencies -->
 		<webjars-bootstrap.version>4.6.0</webjars-bootstrap.version>
 		<webjars-jquery-ui.version>1.12.1</webjars-jquery-ui.version>
@@ -108,6 +108,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

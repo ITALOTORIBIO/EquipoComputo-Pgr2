@@ -2,16 +2,45 @@ name: Java CI with Maven Deploy to heroku
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
-
-env:
-  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-  HEROKU_APP_NAME: ${{ 'usmpcomputo-api' }}
-  HEROKU_PSS_DB: ${{ secrets.HEROKU_PSS_DB }}
+    branches: [ main ]
 
 jobs:
+  build_webapi:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    
+    - name: Build with Maven Backend
+      run: mvn -B package --file tiendacomputoapi/pom.xml
+
+    - name: Build, Push and Release a Docker container to Heroku Backend
+      uses: gonuit/heroku-docker-deploy@v1.3.2 
+      with:
+
+          email: "italo_toribio@usmp.pe"
+
+          heroku_api_key: "79e6ac2e-08e7-44ba-950e-029e604b71d7"
+          
+          heroku_app_name: "usmpcomputo-api"
+
+          dockerfile_directory: ./tiendacomputoapi
+
+          dockerfile_name: DockerFile
+
+          docker_options: "--no-cache"
+
+          process_type: web
+
+
   build_webapp:
     runs-on: ubuntu-latest
     steps:
@@ -24,17 +53,24 @@ jobs:
       with:
         java-version: 1.8
     
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml -Dpassword_db_heroku=$HEROKU_PSS_DB
+    - name: Build with Maven Frontend
+      run: mvn -B package --file tiendacomputomvc/pom.xml
 
-    - name: Docker login
-      run: docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+    - name: Build, Push and Release a Docker container to Heroku Frontend
+      uses: gonuit/heroku-docker-deploy@v1.3.2 
+      with:
 
-    - name: Docker Build
-      run: docker build .
+          email: "italo_toribio@usmp.pe"
 
-    - name: Publish
-      run: |
-        heroku container:push web -a $HEROKU_APP_NAME
-        heroku container:release web -a $HEROKU_APP_NAME
+          heroku_api_key: "79e6ac2e-08e7-44ba-950e-029e604b71d7"
+          
+          heroku_app_name: "usmpcomputo-mvc"
+
+          dockerfile_directory: ./tiendacomputomvc
+
+          dockerfile_name: DockerFile
+
+          docker_options: "--no-cache"
+
+          process_type: web     
  

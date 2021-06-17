@@ -2,12 +2,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Spring Boot-TiendacomputoAPIApplication<tiendacomputo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "usmp.computo.TiendacomputoAPIApplication",
+            "projectName": "tiendacomputoapi",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-TiendacomputoApplication<tiendacomputo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
-            "mainClass": "usmp.computo.tiendacomputo.TiendacomputoApplication",
-            "projectName": "tiendacomputo",
+            "mainClass": "usmp.computo.tiendacomputomvc.TiendacomputomvcApplication",
+            "projectName": "tiendacomputomvc",
             "args": ""
         }
     ]
