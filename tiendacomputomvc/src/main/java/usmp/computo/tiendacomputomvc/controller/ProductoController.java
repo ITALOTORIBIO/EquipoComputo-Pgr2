@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 
 import usmp.computo.tiendacomputomvc.model.Producto;
-import usmp.computo.tiendacomputomvc.repository.*;
+
 import usmp.computo.tiendacomputomvc.repository.ProductoRepository;
 
 import java.util.Optional;
@@ -20,7 +20,7 @@ import org.springframework.validation.BindingResult;
 
 public class ProductoController {
     private static final String INDEX ="Producto/create"; 
-    private static String MODEL_CONTACT="client";
+
     
     private final ProductoRepository productoData;
 

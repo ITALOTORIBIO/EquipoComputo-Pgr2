@@ -53,4 +53,20 @@ public class Producto{
     public void setCategoria(String Categoria) {
         this.Categoria = Categoria;
     }
+    public String getImagen() {
+        return this.Imagen;
+    }
+
+    public void setImagen(String Imagen) {
+        this.Imagen = Imagen;
+    }
+
+    public Double getPrecio() {
+        return this.Precio;
+    }
+
+    public void setPrecio(Double Precio) {
+        this.Precio = Precio;
+    }
+
 }

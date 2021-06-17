@@ -18,47 +18,47 @@ import usmp.computo.repository.*;
 
 
 @RestController
-@RequestMapping(value = "api/producto", produces = "application/json")
-public class ProductoController {
+@RequestMapping(value = "api/Venta", produces = "application/json")
+public class VentaController {
 
-    private ProductoRepository ProductoRepository;
+    private VentaRepository VentaRepository;
      
     
     
-    public ProductoController(ProductoRepository ProductoRepository){
-        this.ProductoRepository = ProductoRepository;
+    public VentaController(VentaRepository VentaRepository){
+        this.VentaRepository = VentaRepository;
     }
 
-    @GetMapping(value = "/Producto", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Producto>> Productos(){
-        return  new ResponseEntity<List<Producto>>(
-            ProductoRepository.findAll(), HttpStatus.OK);
+    @GetMapping(value = "/Venta", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Venta>> Ventas(){
+        return  new ResponseEntity<List<Venta>>(
+            VentaRepository.findAll(), HttpStatus.OK);
     }
 
     @PostMapping(value = "/Create", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Integer> create(@RequestBody Producto e){
-        ProductoRepository.save(e);
-        ProductoRepository.flush();
+    public ResponseEntity<Integer> create(@RequestBody Venta e){
+        VentaRepository.save(e);
+        VentaRepository.flush();
         return new ResponseEntity<Integer>(e.getId(),HttpStatus.CREATED);
     }
     @DeleteMapping(value = "/Delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity delete(@PathVariable int id){
-        ProductoRepository.deleteById(id);
+        VentaRepository.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);
     }
     @PutMapping(value = "/Update", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Producto> update(@RequestBody Producto e){
+    public ResponseEntity<Venta> update(@RequestBody Venta e){
         create(e);
-        return new ResponseEntity<Producto>(HttpStatus.OK);
+        return new ResponseEntity<Venta>(HttpStatus.OK);
     }
-    @GetMapping(value = "/Producto/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Producto> Productos(@PathVariable int id){
-        Optional<Producto> optinalEntity = ProductoRepository.findById(id);
+    @GetMapping(value = "/Venta/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Venta> Ventas(@PathVariable int id){
+        Optional<Venta> optinalEntity = VentaRepository.findById(id);
         if(optinalEntity.isPresent())
-            return new ResponseEntity<Producto>(
+            return new ResponseEntity<Venta>(
                 optinalEntity.get(), HttpStatus.OK);
         else
-            return new ResponseEntity<Producto>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Venta>(HttpStatus.NOT_FOUND);
     }
 
 

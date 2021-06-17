@@ -1,0 +1,27 @@
+@host = localhost:8080
+
+GET {{host}}/Producto HTTP/1.1
+Accept: application/json
+
+GET {{host}}/Producto/1 HTTP/1.1
+Accept: application/json
+
+POST {{host}}/Producto HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName" : "Test8",
+    "lastName" : "Test8"
+}
+
+DELETE {{host}}/producto/2 HTTP/1.1
+Accept: application/json
+
+PUT {{host}}/producto HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":"3",
+    "firstName" : "Orestes",
+    "lastName" : "La Cunza"
+}
