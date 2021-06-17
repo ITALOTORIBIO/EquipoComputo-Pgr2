@@ -1,11 +1,11 @@
-package usmp.computo.tiendacomputomvc.web;
+package usmp.computo.tiendacomputomvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 
-import usmp.computo.tiendacomputomvc.domain.Venta;
+import usmp.computo.tiendacomputomvc.model.Venta;
 import usmp.computo.tiendacomputomvc.repository.*;
 import usmp.computo.tiendacomputomvc.repository.VentaRepository;
 
@@ -34,21 +34,5 @@ public class VentaController {
         return INDEX;      
     }
 
-        // List<Employee> employess = gdhService.queryEmployeeExternal();
-        // model.addAttribute("employees", employess);
-       
-
-    // @PostMapping("/Producto/create")
-    // public String submitCreationForm(Model model,
-    //     @Valid Producto objProducto, BindingResult result) {
-    //     if (!result.hasErrors()) {
-    //         this.productoData.save(objProducto);
-    //         model.addAttribute("Producto", objProducto);
-    //         model.addAttribute("message", "Se registro satisfactoriamente");
-    //     }else{
-    //         model.addAttribute("message", "Por favor envie los datos correctos");
-    //     }
-    //     return INDEX;
-    // }
 
 }

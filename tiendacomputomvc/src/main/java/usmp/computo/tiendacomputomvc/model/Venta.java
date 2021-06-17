@@ -1,4 +1,4 @@
-package usmp.computo.tiendacomputomvc.domain;
+package usmp.computo.tiendacomputomvc.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
