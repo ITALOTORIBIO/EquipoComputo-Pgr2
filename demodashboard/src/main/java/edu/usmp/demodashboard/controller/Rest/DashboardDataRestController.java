@@ -12,15 +12,15 @@ import edu.usmp.demodashboard.repository.*;
 @RestController
 @RequestMapping(value = "api/dashboard", produces = "application/json")
 public class DashboardDataRestController {
-    private final PaymentRepository paymentData;
+    private final VentaRepository DBventa;
 
-    public DashboardDataRestController(PaymentRepository paymentData){
-        this.paymentData = paymentData;
+    public DashboardDataRestController(VentaRepository DBventa){
+        this.DBventa = DBventa;
     } 
 
     @GetMapping(value = "/tarjetas", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Map<String, Object>>> employees(){
         return  new ResponseEntity<List<Map<String, Object>>>(
-            paymentData.queryByTipoTarjeta(), HttpStatus.OK);
+            DBventa.queryByfecha(), HttpStatus.OK);
     }
 }

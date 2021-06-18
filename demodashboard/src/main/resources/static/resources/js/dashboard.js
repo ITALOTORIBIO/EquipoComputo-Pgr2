@@ -8,12 +8,12 @@ function graficoPrincipal() {
         dataType: "json",
       }).done(function (jsonData) {
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'tipoTarjeta');
+        data.addColumn('string', 'nombre');
         data.addColumn('number', 'montoTotal');
 
         jsonData.forEach(function (row) {
           data.addRow([
-            row.tipoTarjeta,
+            row.nombre,
             row.montoTotal
           ]);
         });
@@ -34,12 +34,12 @@ function graficoPagos() {
         dataType: "json",
       }).done(function (jsonData) {
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'tipoTarjeta');
+        data.addColumn('string', 'nombre');
         data.addColumn('number', 'montoTotal');
 
         jsonData.forEach(function (row) {
           data.addRow([
-            row.tipoTarjeta,
+            row.nombre,
             row.montoTotal
           ]);
         });
@@ -60,12 +60,12 @@ function graficoEntregas() {
     dataType: "json",
   }).done(function (jsonData) {
     var data = new google.visualization.DataTable();
-    data.addColumn('string', 'tipoTarjeta');
+    data.addColumn('string', 'nombre');
     data.addColumn('number', 'montoTotal');
 
     jsonData.forEach(function (row) {
       data.addRow([
-        row.tipoTarjeta,
+        row.nombre,
         row.montoTotal
       ]);
     });

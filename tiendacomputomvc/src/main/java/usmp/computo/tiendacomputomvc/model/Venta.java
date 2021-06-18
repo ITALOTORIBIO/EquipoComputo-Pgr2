@@ -28,7 +28,7 @@ public class Venta{
     private String CodCliente;
     private String IdProducto;
     private String NombreProducto;
-    private String Cantidad;
+    private Integer Cantidad;
     private Date Fecha;
     private Double PrecioTotal;
 

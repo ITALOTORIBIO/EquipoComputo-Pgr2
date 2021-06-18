@@ -11,7 +11,6 @@ import javax.persistence.Transient;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
 import lombok.*;
 
 @Getter
@@ -20,22 +19,18 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "t_payment")
-public class Payment {
+@Table(name = "Venta") 
+
+public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
+    private String CodCliente;
+    private String IdProducto;
+    private String NombreProducto;
+    private Integer Cantidad;
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date paymentDate; 
-    private String nombreTarjeta;
-    private String numeroTarjeta;
-    @Transient
-    private String dueDateYYMM;
-    @Transient
-    private String cvv;
-    private BigDecimal montoTotal;
-    private Integer clienteId;
-    @Column(name = "tipo_tarjeta")
-    private String tipoTarjeta;
+    private Date Fecha;
+    private BigDecimal PrecioTotal;
     
 }
