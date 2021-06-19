@@ -4,7 +4,7 @@ google.charts.setOnLoadCallback(graficoPrincipal);
 
 function graficoPrincipal() {
       $.ajax({
-        url: "http://localhost:8080/api/dashboard/tarjetas",
+        url: "http://localhost:8092/api/dashboard/tarjetas",
         dataType: "json",
       }).done(function (jsonData) {
         var data = new google.visualization.DataTable();
@@ -30,7 +30,7 @@ function graficoPrincipal() {
 
 function graficoPagos() {
       $.ajax({
-        url: "http://localhost:8080/api/dashboard/tarjetas",
+        url: "http://localhost:8092/api/dashboard/tarjetas",
         dataType: "json",
       }).done(function (jsonData) {
         var data = new google.visualization.DataTable();
@@ -56,7 +56,7 @@ function graficoPagos() {
 
 function graficoEntregas() {
   $.ajax({
-    url: "http://localhost:8080/api/dashboard/tarjetas",
+    url: "http://localhost:8092/api/dashboard/tarjetas",
     dataType: "json",
   }).done(function (jsonData) {
     var data = new google.visualization.DataTable();

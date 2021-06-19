@@ -1,51 +1,44 @@
+<!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" 
     th:replace="~{fragments/layout :: layout (~{::body},'Inicio')}">
 
 <head>
     <title>User</title>
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
-    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css} " />
-    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
 
 <body>
-    <div class="container">
-
-        <div class="row">
-            <div class="col-sm-10 mt-5">
-                <div class="form-group">
-                    <h1>Login</h1>
-                </div>
-                <form th:object="${user}" th:action="@{/user/login}" method="post">
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <label for="username">User Name</label>
-                        </div>
-                        <div class="col-sm-2">
-                            <input type="text" th:field="*{username}" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <label for="password">Password</label>
-                        </div>
-                        <div class="col-sm-2">
-                            <input type="password" th:field="*{password}" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-2">
+    <div class="container h-100" style="margin-bottom: 67%;">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card" style="margin-top: 100px;">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container" style="margin-bottom: 10px;">
+						<img src="http://www.insak.com.co/aym_image/aym_ico/aym_ico_user.png" width="150px;" height="150px;" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form th:object="${user}" th:action="@{/user/login}" method="post">
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" th:field="*{username}" class="form-control " placeholder="username">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" th:field="*{password}"  class="form-control" placeholder="password">
+						</div>
+						<div class="d-flex justify-content-center mt-3 login_container">
                             <button th:with="text='Login'" class="btn btn-primary" type="submit" th:text="${text}" />
-                        </div>
-                    </div>
-                </form>
+				        </div>
+					</form>
+				</div>
                 <p th:text="${message}" />
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
+   
 </body>
 
 </html> 

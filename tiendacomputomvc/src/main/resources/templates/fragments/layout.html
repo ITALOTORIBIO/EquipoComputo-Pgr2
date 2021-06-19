@@ -15,9 +15,9 @@
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}" />
 
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">App</a>
+<body style="background-image:url(https://papers.co/wallpaper/papers.co-sj57-sky-blue-clear-white-gradation-blur-35-3840x2160-4k-wallpaper.jpg)">
+  <nav class="navbar navbar-light light-blue lighten-4" style="background-color: #0c8612;">       
+        <a class="navbar-brand" href="#"><img src="../static/resources/images/logo.png" th:src="@{/resources/images/logo.png}" width="100" height="100" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,10 +30,6 @@
               <a class="nav-link" href="/Producto/create">Producto</a>
             </li>
           </ul>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/customer/create"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="/user/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
